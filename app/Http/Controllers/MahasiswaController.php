@@ -10,7 +10,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        return mahasiswa::all();
+        return Mahasiswa::all();
     }
 
     public function show(mahasiswa $mahasiswa)
