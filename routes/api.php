@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-Use App\mahasiswa;
 use App\Http\Controllers\MahasiswaController;
 
 /*
