@@ -11,7 +11,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        return Mahasiswa::all();
+        return mahasiswa::all();
     }
 
     public function show(mahasiswa $mahasiswa)
