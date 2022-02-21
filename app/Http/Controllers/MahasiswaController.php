@@ -8,7 +8,7 @@ use App\Models\mahasiswa;
 
 class MahasiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return mahasiswa::all();
     }
