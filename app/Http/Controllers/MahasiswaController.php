@@ -17,9 +17,14 @@ class MahasiswaController extends Controller
         $mahasiswa = new Mahasiswa;
         $num_str = sprintf("%09d", mt_rand(1, 999999999));
         $curr_timestamp = date('Y-m-d');
+        $numbers = [];
+
+        for($i = 1; $i <=999; $i++){
+            $numbers[] = str_pad($i, 3, '$curr_timestamp', STR_PAD_LEFT);
+        }
 
         $mahasiswa->name = $request->name;
-        $mahasiswa->nip = $num_str;
+        $mahasiswa->nip = $numbers;
         $mahasiswa->address = $request->address;
         $mahasiswa->registrationDate = $curr_timestamp;
 
