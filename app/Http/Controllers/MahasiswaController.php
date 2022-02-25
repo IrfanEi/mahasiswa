@@ -15,11 +15,13 @@ class MahasiswaController extends Controller
 
     public function store(Request $request) {
         $mahasiswa = new Mahasiswa;
+        $num_str = sprintf("%09d", mt_rand(1, 999999999));
+        $curr_timestamp = date('Y-m-d');
 
         $mahasiswa->name = $request->name;
-        $mahasiswa->nip = $request->nip;
+        $mahasiswa->nip = $num_str;
         $mahasiswa->address = $request->address;
-        $mahasiswa->registrationDate = $request->registrationDate;
+        $mahasiswa->registrationDate = $curr_timestamp;
 
         $mahasiswa->save();
 

@@ -23,4 +23,4 @@ Route::resource('mahasiswa', MahasiswaController::class)->only([
     'show', 'update', 'destroy', 'index', 'store'
 ]);
 
-Route::get('/student/nip/{nip}', [StudentController::class, 'search']);
+Route::get('/mahasiswa/nip/{nip}', [MahasiswaController::class, 'search']);
