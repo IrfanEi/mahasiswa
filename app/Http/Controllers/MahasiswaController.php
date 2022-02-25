@@ -9,12 +9,12 @@ use App\Models\Mahasiswa;
 class MahasiswaController extends Controller
 {
     public function index(Request $request) {
-        $mahasiswa = mahasiswa::all();
+        $mahasiswa = Mahasiswa::all();
         return response()->json(["result" => $mahasiswa], 200);
     }
 
     public function store(Request $request) {
-        $mahasiswa = new mahasiswa;
+        $mahasiswa = new Mahasiswa;
 
         $mahasiswa->name = $request->name;
         $mahasiswa->nip = $request->nip;
@@ -27,18 +27,18 @@ class MahasiswaController extends Controller
     }
 
     public function show(Request $request, $mahasiswaId) {
-        $mahasiswa = mahasiswa::find($mahasiswaId);
+        $mahasiswa = Mahasiswa::find($mahasiswaId);
         return response()->json(["result" => $mahasiswa], 200);
     }
 
     public function search(Request $request, $nip) {
-        $mahasiswa = mahasiswa::where('nip', '=', $nip)->first();
+        $mahasiswa = Mahasiswa::where('nip', '=', $nip)->first();
         return response()->json(["result" => $mahasiswa], 200);
     }
 
     public function update(Request $request, $mahasiswaId)
     {
-        $mahasiswa = Student::find($mahasiswaId);
+        $mahasiswa = Mahasiswa::find($mahasiswaId);
 
         if (!is_null($request->name)){
             $mahasiswa->name = $request->name;
