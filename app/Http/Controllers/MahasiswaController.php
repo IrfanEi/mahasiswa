@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\mahasiswa;
+use App\Models\Mahasiswa;
 
 
 class MahasiswaController extends Controller
@@ -36,12 +36,12 @@ class MahasiswaController extends Controller
         return response()->json(["result" => $mahasiswa], 200);
     }
 
-    /*public function update(Request $request, $studentId)
+    public function update(Request $request, $mahasiswaId)
     {
-        $student = Student::find($studentId);
+        $mahasiswa = Student::find($mahasiswaId);
 
         if (!is_null($request->name)){
-            $student->name = $request->name;
+            $mahasiswa->name = $request->name;
         }
 
         if (!is_null($request->nip)){
@@ -53,19 +53,19 @@ class MahasiswaController extends Controller
         }
 
         if (!is_null($request->registrationDate)){
-            $student->registrationDate = $request->registrationDate;
+            $mahasiswa->registrationDate = $request->registrationDate;
         }
 
-        $student->save();
+        $mahasiswa->save();
 
-        return response()->json(["result" => $student], 200);       
+        return response()->json(["result" => $mahasiswa], 200);       
     }
 
-    public function destroy($studentId)
+    public function destroy($mahasiswaId)
     {
-        $student = Student::find($studentId);
-        $student->delete();
+        $mahasiswa = Mahasiswa::find($mahasiswaId);
+        $mahasiswa->delete();
 
         return response()->json(["result" => "ok"], 200);       
-    }*/
+    }
 }
