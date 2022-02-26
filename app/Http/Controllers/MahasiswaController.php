@@ -15,16 +15,12 @@ class MahasiswaController extends Controller
 
     public function store(Request $request) {
         $mahasiswa = new Mahasiswa;
-        $num_str = sprintf("%09d", mt_rand(1, 999999999));
         $curr_timestamp = date('Y-m-d');
-        $numbers = [];
-
-        for($i = 1; $i <=999; $i++){
-            $numbers[] = str_pad($i, 3, '$curr_timestamp', STR_PAD_LEFT);
-        }
+        $today = date("Ymd"); 
 
         $mahasiswa->name = $request->name;
-        $mahasiswa->nip = $numbers;
+        //$mahasiswa = Mahasiswa::find($mahasiswaId).sort(nip:-1).limit(1)+1;
+        $mahasiswa->nip = $today. '0001';
         $mahasiswa->address = $request->address;
         $mahasiswa->registrationDate = $curr_timestamp;
 
